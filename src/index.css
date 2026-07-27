@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@400;500;600&display=swap');
+@import 'leaflet/dist/leaflet.css';
+
+:root {
+  /* Colors */
+  --color-green-primary: #1A5C35;
+  --color-green-light: #E8F5EE;
+  --color-green-medium: #2E7D52;
+  --color-white: #FFFFFF;
+  --color-gray-light: #F5F5F5;
+  --color-black: #111111;
+  --color-gray-dark: #2D3330;
+  --color-gray-text: #5A6A62;
+  --color-green-border: #D6E6DC;
+  
+  /* Typography (Legacy) */
+  --font-family: 'Inter', sans-serif;
+  --text-base: 16px;
+  --text-sm: 14px;
+  --text-lg: 18px;
+  --text-xl: 24px;
+  --text-2xl: 32px;
+  --text-3xl: 48px;
+
+  /* Typography Scale (Desktop Default) */
+  --text-12: 12px;
+  --text-14: 14px;
+  --text-16: 16px;
+  --text-18: 18px;
+  --text-20: 20px;
+  --text-24: 24px;
+  --text-30: 30px;
+  --text-38: 38px;
+  --text-48: 48px;
+  --text-52: 52px;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 24px rgba(0,0,0,0.12);
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease-in-out;
+  --transition-normal: 0.3s ease;
+
+  /* Somos Partner Marketplace Design Tokens */
+  --purple-950: #0F0330;
+  --purple-900: #1C0752;
+  --purple-800: #2D0F6B;
+  --purple-700: #4C1D95;
+  --purple-600: #5B21B6;
+  --purple-500: #7C3AED;
+  --purple-400: #8B5CF6;
+  --purple-300: #A78BFA;
+  --purple-200: #C4B5FD;
+  --purple-100: #EDE9FE;
+  --purple-50:  #F5F3FF;
+  --orange-600: #EA580C;
+  --orange-500: #F97316;
+  --orange-400: #FB923C;
+  --orange-100: #FFEDD5;
+  --gray-900: #0F172A;
+  --gray-600: #475569;
+  --gray-400: #94A3B8;
+  --gray-200: #E2E8F0;
+  --gray-100: #F1F5F9;
+  --gray-55:  #F8FAFC; /* avoid name clash if any */
+  --green-500: #22C55E;
+  --green-100: #DCFCE7;
+  --blue-500:  #3B82F6;
+  --blue-100:  #DBEAFE;
+  --shadow-purple: 0 8px 24px rgba(92, 33, 182, 0.25);
+  --shadow-orange: 0 8px 24px rgba(249, 115, 22, 0.35);
+}
+
+/* Mobile Typography Overrides */
+@media (max-width: 768px) {
+  :root {
+    --text-12: 12px;
+    --text-14: 12px;
+    --text-16: 14px;
+    --text-18: 16px;
+    --text-20: 18px;
+    --text-24: 20px;
+    --text-30: 24px;
+    --text-38: 26px;
+    --text-48: 32px;
+    --text-52: 40px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--text-base);
+  color: var(--color-black);
+  background-color: var(--color-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.btn-primary {
+  background-color: var(--color-green-primary);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-green-medium);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-green-primary);
+  border: 1px solid var(--color-green-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-green-light);
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-green-light);
+  color: var(--color-green-primary);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.leaflet-container {
+  font-family: inherit;
+}
+
+/* Animación para la alerta */
+@keyframes marquee-seamless {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
