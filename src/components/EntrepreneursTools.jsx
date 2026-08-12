@@ -33,11 +33,7 @@ const EntrepreneursTools = () => {
       <div className={`ep-banners-row ${isVisible ? 'animate-zoom-in' : ''}`}>
         {/* Banner 1: Somos Partner */}
         <div className="ep-banner ep-banner-sp">
-          <div className="ep-banner-left ep-sp-left">
-            <img src="/mujer-sp.png" alt="Mujer en bean bag" className="ep-banner-img" />
-          </div>
-          
-          <div className="ep-banner-right">
+          <div className="ep-banner-left-content">
             <img src="/logo-sp.png" alt="Somos Partner" className="ep-logo" />
             <h3 className="ep-banner-title">
               Inscríbete y accede a<br />
@@ -46,34 +42,14 @@ const EntrepreneursTools = () => {
             <p className="ep-banner-desc">
               Integra plugins en tu e-commerce y mejora la experiencia de tus envíos.
             </p>
+          </div>
+
+          <div className="ep-banner-middle-action">
             <button className="ep-btn-orange">Inscríbete en Somos Partner</button>
           </div>
-        </div>
 
-        {/* Banner 2: Marketplace Starken */}
-        <div className="ep-banner ep-banner-mp">
-          <div className="ep-banner-left">
-            {/* Ilustración CSS flotante de Marketplace */}
-            <div className="ep-mp-illus float-anim-ep">
-              <div className="ep-mp-box-main">📦</div>
-              <div className="ep-mp-card-float">🛍️</div>
-              <div className="ep-mp-sparkle ep-sparkle-1">✦</div>
-              <div className="ep-mp-sparkle ep-sparkle-2">✨</div>
-            </div>
-          </div>
-
-          <div className="ep-banner-right">
-            <span className="ep-mp-badge">✦ NUEVO</span>
-            <h3 className="ep-banner-title">
-              Compra y vende con el nuevo<br />
-              <strong>Marketplace <span>Starken</span></strong>
-            </h3>
-            <p className="ep-banner-desc">
-              Apoya a emprendedores, accede a envíos Starken y acumula puntos.
-            </p>
-            <Link to="/marketplace" state={{ isGuest: true }} className="ep-btn-purple">
-              Explorar Marketplace
-            </Link>
+          <div className="ep-banner-right ep-sp-right">
+            <img src="/mujer-sp.png" alt="Mujer en bean bag" className="ep-banner-img" />
           </div>
         </div>
       </div>

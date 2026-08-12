@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './SliderBanner.css';
 
-const SliderBanner = () => {
+const SliderBanner = ({ compact = false }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
@@ -67,7 +67,7 @@ const SliderBanner = () => {
 
   return (
     <div
-      className="slider-banner-container"
+      className={`slider-banner-container ${compact ? 'compact-banner' : ''}`}
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEndEvent}

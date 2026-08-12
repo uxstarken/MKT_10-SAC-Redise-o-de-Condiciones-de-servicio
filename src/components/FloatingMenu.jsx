@@ -34,15 +34,19 @@ const FloatingMenu = () => {
       <div className="floating-menu-container">
         {/* Enlaces Izquierda */}
         <div className="fm-links">
-          <button className="fm-link" onClick={() => navigate('/cotizar')} style={{ borderRight: '1px solid #eaeaea', paddingRight: '24px' }}>
+          <button className="fm-link" onClick={() => navigate('/cotizar')}>
             <img src="/icono-cotizar.png" alt="" className="fm-icon-img" />
             <span>Cotizar</span>
           </button>
           
-          <button className="fm-link" onClick={() => navigate('/emitir')} style={{ borderRight: '1px solid #eaeaea', paddingRight: '24px' }}>
+          <div className="fm-vertical-divider"></div>
+          
+          <button className="fm-link" onClick={() => navigate('/emitir')}>
             <img src="/icono-emision.png" alt="" className="fm-icon-img" />
             <span>Enviar</span>
           </button>
+
+          <div className="fm-vertical-divider"></div>
           
           <button className="fm-link">
             <img src="/Icono-gps.png" alt="" className="fm-icon-img" />

@@ -95,7 +95,7 @@
   transform: translateY(20px) scale(0.95);
   transform-origin: bottom right;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
 }
 
 .home-chat-panel.open {
@@ -110,7 +110,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 16px;
-  background: linear-gradient(90deg, #029E47 0%, #02853c 100%);
+  background: linear-gradient(90deg, var(--starken-green) 0%, var(--starken-green-dark) 100%);
   color: white;
 }
 

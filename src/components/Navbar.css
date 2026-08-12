@@ -1,11 +1,24 @@
+.navbar-wrapper {
+  width: 100%;
+  display: block;
+}
+
 .navbar-container {
   width: 100%;
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 100;
+  left: 0;
+  z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   background-color: var(--color-white);
   font-family: var(--font-family);
+  transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.navbar-container.navbar-hidden {
+  top: -130px;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .navbar-container.mobile-menu-active {
@@ -21,7 +34,7 @@
   padding: 0 40px;
   height: 40px;
   font-size: 13px;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
   font-weight: 500;
 }
 
@@ -135,18 +148,18 @@
 }
 
 .main-link:hover {
-  color: #029E47;
+  color: var(--starken-green);
 }
 
 .main-link.active {
-  color: #029E47;
-  font-weight: 600; /* Semibold */
+  color: var(--starken-green);
+  font-weight: 600;
 }
 
 .main-link .chevron-down {
   width: 12px;
   height: 12px;
-  stroke: #029E47; /* Chevron verde como en la imagen */
+  stroke: var(--starken-green);
 }
 
 .nav-actions {
@@ -163,15 +176,16 @@
   transition: color 0.2s;
 }
 .crear-cuenta-link:hover {
-  color: #029E47;
+  color: var(--starken-green);
 }
 
 .btn-ingresar {
-  background-color: #029E47; /* Verde brillante */
+  background-color: var(--starken-green);
   color: #ffffff;
-  padding: 10px 24px;
-  border-radius: 4px; /* Bordes algo menos redondeados */
-  font-weight: 500;
+  padding: 10px 36px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-weight: 700;
   font-size: 14px;
   border: none;
   cursor: pointer;

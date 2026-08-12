@@ -9,7 +9,7 @@
 
 /* CAJA VERDE */
 .recom-green-box {
-  background-color: #02853c;
+  background-color: var(--starken-green);
   margin-top: 92px; /* Espacio para que la cabeza del muñeco sobresalga */
   padding: 0 160px;
   position: relative;
@@ -49,7 +49,7 @@
 
 .recom-title {
   color: #ffffff;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-title);
   font-size: 28px;
   font-weight: 800;
   letter-spacing: 0.5px;
@@ -86,36 +86,37 @@
 }
 
 .recom-card-text h3 {
-  color: #029E47;
-  font-family: 'Poppins', sans-serif;
+  color: var(--starken-green);
+  font-family: var(--font-title);
   font-size: 15px;
   font-weight: 700;
   margin: 0 0 4px 0;
 }
 
 .recom-card-text p {
-  color: #777777;
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
+  color: var(--starken-text-muted);
+  font-family: var(--font-body);
+  font-size: 12px;
   line-height: 1.4;
   margin: 0;
 }
 
 .recom-btn {
-  border: 1.5px solid #029E47;
-  color: #029E47;
+  border: 2px solid var(--starken-green);
+  color: var(--starken-green);
   background-color: transparent;
-  padding: 10px 24px;
-  border-radius: 24px;
-  font-weight: 600;
-  font-size: 14px;
+  padding: 8px 22px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 13px;
   cursor: pointer;
   transition: all 0.25s ease;
   white-space: nowrap;
 }
 
 .recom-btn:hover {
-  background-color: #029E47;
+  background-color: var(--starken-green);
   color: #ffffff;
   transform: translateY(-1px);
 }

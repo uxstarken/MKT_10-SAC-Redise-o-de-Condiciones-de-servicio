@@ -2,20 +2,20 @@
   padding: 40px 160px;
   max-width: 100%;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
 }
 
 .services-title {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-title);
   font-size: 28px;
-  color: #303030;
+  color: var(--starken-text-dark);
   margin-bottom: 30px;
   text-transform: none;
-  margin-left: 10px; /* Alineado con el borde de la card (padding 10px del wrapper) */
+  margin-left: 10px;
 }
 
 .services-title span {
-  color: #029E47;
+  color: var(--starken-green);
 }
 
 .carousel-wrapper {
@@ -110,6 +110,14 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+  border-color: var(--starken-green);
 }
 
 .service-image-container {
@@ -159,14 +167,16 @@
 }
 
 .service-content h3 {
-  color: #029E47;
+  color: var(--starken-green);
+  font-family: var(--font-title);
   font-size: 16px;
   font-weight: 700;
   margin: 0 0 12px 0;
 }
 
 .service-content p {
-  color: #888;
+  color: var(--starken-text-muted);
+  font-family: var(--font-body);
   font-size: 13px;
   line-height: 1.5;
   margin: 0;
@@ -191,7 +201,38 @@
 }
 
 .dot.active {
-  background: #029E47;
+  background: var(--starken-green);
+}
+
+/* Secondary Button under carousel */
+.services-footer-action {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+.btn-secondary-services {
+  background-color: transparent;
+  color: var(--starken-green);
+  border: 2px solid var(--starken-green);
+  padding: 12px 32px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(2, 158, 71, 0.08);
+}
+
+.btn-secondary-services:hover {
+  background-color: var(--starken-green);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(2, 158, 71, 0.25);
 }
 
 /* Responsiveness for smaller screens */

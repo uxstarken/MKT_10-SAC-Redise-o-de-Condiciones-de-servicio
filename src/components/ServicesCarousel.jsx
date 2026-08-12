@@ -1,74 +1,63 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './ServicesCarousel.css';
 
 const servicesData = [
   {
     id: 1,
-    image: '/custodia-puntodeventa.png',
+    image: '/card-envio-local.png',
     badge: 'Nacional',
     price: 'Desde $2.000',
-    title: 'Custodia Punto Starken',
-    description: 'Permite dejar envíos en un Punto Starken habilitado para que el destinatario lo retire allí.'
+    title: 'Envío local',
+    description: 'Realiza envíos dentro de tu ciudad con la máxima rapidez y eficiencia.'
   },
   {
     id: 2,
-    image: '/servicio-express.png',
-    badge: 'Zona extrema',
-    price: 'Desde $2.000',
-    title: 'Servicio express',
-    description: 'Permite dejar envíos en un Punto Starken habilitado para que el destinatario lo retire allí.'
+    image: '/card-envio-digital.png',
+    badge: 'Digital',
+    price: 'Desde $1.500',
+    title: 'Envío digital',
+    description: 'Gestiona tus etiquetados y envíos de manera 100% online y automatizada.'
   },
   {
     id: 3,
-    image: '/lockers.png',
+    image: '/card-expreso-aereo.png',
     badge: 'Nacional',
-    price: 'Desde $2.000',
-    title: 'Casilleros',
-    description: 'Permite dejar envíos en un Punto Starken habilitado para que el destinatario lo retire allí.'
+    price: 'Desde $3.500',
+    title: 'Expreso aéreo',
+    description: 'Envía a lo largo de todo Chile de forma prioritaria con conexión aérea.'
   },
   {
     id: 4,
-    image: '/custodia-puntodeventa.png',
-    badge: 'Nacional',
-    price: 'Desde $2.000',
-    title: 'Custodia Punto Starken',
-    description: 'Permite dejar envíos en un Punto Starken habilitado para que el destinatario lo retire allí.'
+    image: '/card-locker.png',
+    badge: '24/7',
+    price: 'Desde $1.800',
+    title: 'Locker autoservicio',
+    description: 'Entrega y retira tus paquetes a cualquier hora en nuestra red de lockers.'
   },
   {
     id: 5,
-    image: '/servicio-express.png',
-    badge: 'Zona extrema',
-    price: 'Desde $2.000',
-    title: 'Servicio express',
-    description: 'Permite dejar envíos en un Punto Starken habilitado para que el destinatario lo retire allí.'
-  },
-  {
-    id: 6,
-    image: '/lockers.png',
-    badge: 'Nacional',
-    price: 'Desde $2.000',
-    title: 'Casilleros',
-    description: 'Permite dejar envíos en un Punto Starken habilitado para que el destinatario lo retire allí.'
-  },
-  {
-    id: 7,
-    image: '/custodia-puntodeventa.png',
-    badge: 'Nacional',
-    price: 'Desde $2.000',
-    title: 'Custodia Punto Starken',
-    description: 'Permite dejar envíos en un Punto Starken habilitado para que el destinatario lo retire allí.'
-  },
-  {
-    id: 8,
-    image: '/servicio-express.png',
-    badge: 'Zona extrema',
-    price: 'Desde $2.000',
-    title: 'Servicio express',
-    description: 'Permite dejar envíos en un Punto Starken habilitado para que el destinatario lo retire allí.'
+    image: '/card-servicio-embalaje.png',
+    badge: 'Especial',
+    price: 'Desde $1.000',
+    title: 'Servicio embalaje',
+    description: 'Protege tus envíos con materiales de alta calidad y asesoría experta.'
   }
 ];
 
 const ServicesCarousel = () => {
+  const navigate = useNavigate();
+  const handleCardClick = (id) => {
+    const idMap = {
+      1: 'local',
+      2: 'digital',
+      3: 'aereo',
+      4: 'locker',
+      5: 'embalaje'
+    };
+    const stringId = idMap[id] || 'local';
+    navigate(`/servicios?select=${stringId}`);
+  };
   const [currentIndex, setCurrentIndex] = useState(0);
   const [cardsToShow, setCardsToShow] = useState(4);
   const [touchStart, setTouchStart] = useState(null);
@@ -139,7 +128,7 @@ const ServicesCarousel = () => {
     <section className="services-section" ref={sectionRef}>
       <div className="services-container">
         <div className={`services-title-wrapper ${isVisible ? 'animate-fade-left' : ''}`}>
-          <h2 className="services-title">Descubre nuestros <span>servicios</span></h2>
+          <h2 className="services-title">Descubre tu <span>forma de enviar</span></h2>
         </div>
         
         <div className="carousel-wrapper">
@@ -167,15 +156,12 @@ const ServicesCarousel = () => {
                   className="service-card-wrapper"
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
-                  <div className="service-card">
+                  <div className="service-card" onClick={() => handleCardClick(service.id)}>
                     <div className="service-image-container">
                       <img src={service.image} alt={service.title} />
-                      <div className="price-badge">{service.price}</div>
+                      <div className="price-badge">{service.badge}</div>
                     </div>
                     <div className="service-content">
-                      <span className={`type-badge ${service.badge === 'Zona extrema' ? 'orange-extrema' : ''}`}>
-                        {service.badge}
-                      </span>
                       <h3>{service.title}</h3>
                       <p>{service.description}</p>
                     </div>
@@ -203,6 +189,13 @@ const ServicesCarousel = () => {
               aria-label={`Ir a diapositiva ${idx + 1}`}
             />
           ))}
+        </div>
+
+        {/* Botón secundario: Ver todos los servicios */}
+        <div className="services-footer-action">
+          <button className="btn-secondary-services" onClick={() => navigate('/servicios')}>
+            Ver todos los servicios
+          </button>
         </div>
       </div>
     </section>

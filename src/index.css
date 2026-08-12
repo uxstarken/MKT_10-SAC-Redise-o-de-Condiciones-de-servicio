@@ -1,20 +1,56 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&family=Inter:wght@400;500;700&display=swap');
 @import 'leaflet/dist/leaflet.css';
 
 :root {
-  /* Colors */
-  --color-green-primary: #1A5C35;
-  --color-green-light: #E8F5EE;
-  --color-green-medium: #2E7D52;
+  /* Design System Typography */
+  --font-title: 'DIN 2014', 'DIN Alternate', 'DIN Condensed', 'DIN', 'Inter', sans-serif;
+  --font-body: 'Nunito', sans-serif;
+  --font-family: var(--font-body);
+
+  /* Starken Design System Palettes */
+  /* Personas y Puntos (Verde) */
+  --starken-green: #029E47;
+  --starken-green-dark: #016E31;
+  --starken-green-light: #E6F5EC;
+
+  /* Partner (Morado) */
+  --starken-purple: #551A8B;
+  --starken-purple-dark: #3E1B6B;
+  --starken-purple-light: #F3E8FF;
+
+  /* Empresas (Teal / Azul Verdoso) */
+  --starken-teal: #2D7282;
+  --starken-teal-dark: #16424C;
+  --starken-teal-light: #EBF3F5;
+
+  /* Destacados / Promos / Acciones (Naranja) */
+  --starken-orange: #FF8400;
+  --starken-orange-dark: #EA580C;
+  --starken-orange-light: #FFF7ED;
+
+  /* Neutros */
+  --starken-text-dark: #1E293B;
+  --starken-text-muted: #64748B;
+  --starken-bg-light: #F8FAFC;
+  --starken-border: #E2E8F0;
+  --starken-white: #FFFFFF;
+
+  /* Formatos Pill & Radii */
+  --radius-pill: 9999px;
+  --radius-card: 16px;
+  --radius-badge: 12px;
+
+  /* Legacy Colors Fallback */
+  --color-green-primary: var(--starken-green);
+  --color-green-light: var(--starken-green-light);
+  --color-green-medium: var(--starken-green-dark);
   --color-white: #FFFFFF;
   --color-gray-light: #F5F5F5;
   --color-black: #111111;
-  --color-gray-dark: #2D3330;
-  --color-gray-text: #5A6A62;
-  --color-green-border: #D6E6DC;
+  --color-gray-dark: #1E293B;
+  --color-gray-text: #64748B;
+  --color-green-border: #E2E8F0;
   
-  /* Typography (Legacy) */
-  --font-family: 'Inter', sans-serif;
   --text-base: 16px;
   --text-sm: 14px;
   --text-lg: 18px;
@@ -22,7 +58,7 @@
   --text-2xl: 32px;
   --text-3xl: 48px;
 
-  /* Typography Scale (Desktop Default) */
+  /* Typography Scale */
   --text-12: 12px;
   --text-14: 14px;
   --text-16: 16px;
@@ -48,35 +84,6 @@
   /* Transitions */
   --transition-fast: 0.2s ease-in-out;
   --transition-normal: 0.3s ease;
-
-  /* Somos Partner Marketplace Design Tokens */
-  --purple-950: #0F0330;
-  --purple-900: #1C0752;
-  --purple-800: #2D0F6B;
-  --purple-700: #4C1D95;
-  --purple-600: #5B21B6;
-  --purple-500: #7C3AED;
-  --purple-400: #8B5CF6;
-  --purple-300: #A78BFA;
-  --purple-200: #C4B5FD;
-  --purple-100: #EDE9FE;
-  --purple-50:  #F5F3FF;
-  --orange-600: #EA580C;
-  --orange-500: #F97316;
-  --orange-400: #FB923C;
-  --orange-100: #FFEDD5;
-  --gray-900: #0F172A;
-  --gray-600: #475569;
-  --gray-400: #94A3B8;
-  --gray-200: #E2E8F0;
-  --gray-100: #F1F5F9;
-  --gray-55:  #F8FAFC; /* avoid name clash if any */
-  --green-500: #22C55E;
-  --green-100: #DCFCE7;
-  --blue-500:  #3B82F6;
-  --blue-100:  #DBEAFE;
-  --shadow-purple: 0 8px 24px rgba(92, 33, 182, 0.25);
-  --shadow-orange: 0 8px 24px rgba(249, 115, 22, 0.35);
 }
 
 /* Mobile Typography Overrides */
@@ -113,15 +120,16 @@ html, body {
 }
 
 body {
-  font-family: var(--font-family);
+  font-family: var(--font-body);
   font-size: var(--text-base);
-  color: var(--color-black);
-  background-color: var(--color-white);
+  color: var(--starken-text-dark);
+  background-color: var(--starken-white);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
   font-weight: 700;
   line-height: 1.2;
 }
@@ -136,7 +144,7 @@ ul {
 }
 
 button, input, select, textarea {
-  font-family: inherit;
+  font-family: var(--font-body);
   border: none;
   outline: none;
 }

@@ -15,7 +15,7 @@ const Services = () => {
   return (
     <section className="services-section container" id="servicios">
       <div className="section-header">
-        <h2>Nuestros Servicios</h2>
+        <h2>Descubre tu forma de enviar</h2>
         <p>Soluciones logísticas diseñadas para cada necesidad.</p>
       </div>
       

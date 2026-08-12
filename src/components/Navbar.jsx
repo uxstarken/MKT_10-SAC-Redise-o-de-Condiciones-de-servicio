@@ -1,12 +1,74 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const location = useLocation();
   const navigate = useNavigate();
+  const navbarRef = useRef(null);
+  const [navbarHeight, setNavbarHeight] = useState(124);
+
+  useEffect(() => {
+    if (navbarRef.current) {
+      setNavbarHeight(navbarRef.current.offsetHeight);
+    }
+
+    const handleResize = () => {
+      if (navbarRef.current) {
+        setNavbarHeight(navbarRef.current.offsetHeight);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    let lastScrollYVal = window.scrollY;
+    let accumulatedDelta = 0;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const delta = currentScrollY - lastScrollYVal;
+      lastScrollYVal = currentScrollY;
+
+      if (isMobileMenuOpen) {
+        setIsNavbarVisible(true);
+        accumulatedDelta = 0;
+        return;
+      }
+
+      if (currentScrollY <= 80) {
+        setIsNavbarVisible(true);
+        accumulatedDelta = 0;
+        return;
+      }
+
+      // Si cambia de dirección el scroll, reiniciamos la acumulación
+      if ((delta > 0 && accumulatedDelta < 0) || (delta < 0 && accumulatedDelta > 0)) {
+        accumulatedDelta = 0;
+      }
+      accumulatedDelta += delta;
+
+      if (accumulatedDelta > 15) {
+        setIsNavbarVisible(false);
+        accumulatedDelta = 0;
+      } else if (accumulatedDelta < -15) {
+        setIsNavbarVisible(true);
+        accumulatedDelta = 0;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isMobileMenuOpen]);
 
   // Limpiar sesión al visitar el home page
   if (location.pathname === '/') {
@@ -55,7 +117,11 @@ const Navbar = () => {
   if (isAuthPage) return null;
 
   return (
-    <div className={`navbar-container ${isMobileMenuOpen ? 'mobile-menu-active' : ''}`}>
+    <div className="navbar-wrapper" style={{ minHeight: `${navbarHeight}px` }}>
+      <div 
+        ref={navbarRef}
+        className={`navbar-container ${isMobileMenuOpen ? 'mobile-menu-active' : ''} ${!isNavbarVisible ? 'navbar-hidden' : ''}`}
+      >
       {/* Top Navigation Row */}
       <div className="top-nav">
         <div className="top-nav-segments">
@@ -269,6 +335,7 @@ const Navbar = () => {
         </div>
       </div>
     </div>
+  </div>
   );
 };
 
