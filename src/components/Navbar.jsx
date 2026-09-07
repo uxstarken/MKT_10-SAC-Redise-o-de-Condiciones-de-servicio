@@ -29,6 +29,11 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
+    if (location.pathname !== '/') {
+      setIsNavbarVisible(true);
+      return;
+    }
+
     let lastScrollYVal = window.scrollY;
     let accumulatedDelta = 0;
 
@@ -68,7 +73,7 @@ const Navbar = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [isMobileMenuOpen]);
+  }, [isMobileMenuOpen, location.pathname]);
 
   // Limpiar sesión al visitar el home page
   if (location.pathname === '/') {
@@ -116,11 +121,13 @@ const Navbar = () => {
   const isAuthPage = location.pathname === '/login' || location.pathname === '/register' || location.pathname === '/select-role' || location.pathname.startsWith('/dashboard') || location.pathname === '/marketplace';
   if (isAuthPage) return null;
 
+  const isHome = location.pathname === '/';
+
   return (
     <div className="navbar-wrapper" style={{ minHeight: `${navbarHeight}px` }}>
       <div 
         ref={navbarRef}
-        className={`navbar-container ${isMobileMenuOpen ? 'mobile-menu-active' : ''} ${!isNavbarVisible ? 'navbar-hidden' : ''}`}
+        className={`navbar-container ${!isHome ? 'navbar-static' : ''} ${isMobileMenuOpen ? 'mobile-menu-active' : ''} ${isHome && !isNavbarVisible ? 'navbar-hidden' : ''}`}
       >
       {/* Top Navigation Row */}
       <div className="top-nav">
@@ -215,7 +222,7 @@ const Navbar = () => {
                     textAlign: 'left'
                   }}>
                     <Link
-                      to="/dashboard"
+                      to="#"
                       onClick={() => setIsProfileDropdownOpen(false)}
                       style={{
                         padding: '8px 16px',
@@ -250,7 +257,7 @@ const Navbar = () => {
                 )}
               </div>
             ) : (
-              <Link to="/login" className="btn-ingresar" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Ingresar</Link>
+              <Link to="#" className="btn-ingresar" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Ingresar</Link>
             )}
           </div>
 
@@ -329,7 +336,7 @@ const Navbar = () => {
             </a>
             
             <div className="mobile-menu-actions">
-              <Link to="/login" className="mobile-btn-ingresar" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => setIsMobileMenuOpen(false)}>Ingresar</Link>
+              <Link to="#" className="mobile-btn-ingresar" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => setIsMobileMenuOpen(false)}>Ingresar</Link>
             </div>
           </div>
         </div>

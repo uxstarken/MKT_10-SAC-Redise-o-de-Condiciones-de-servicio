@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
@@ -40,7 +41,7 @@ const Footer = () => {
           </h4>
           <ul className="footer-links-list">
             <li><a href="#">Conoce la empresa</a></li>
-            <li><a href="#">Condiciones de servicio</a></li>
+            <li><Link to="/condiciones">Condiciones de servicio</Link></li>
             <li><a href="#">Código de conducta</a></li>
             <li><a href="#">Privacidad de datos</a></li>
             <li><a href="#">Prevención de delitos</a></li>

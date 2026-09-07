@@ -139,7 +139,7 @@
   background-color: transparent;
   color: var(--starken-green);
   border: 2px solid var(--starken-green);
-  border-radius: var(--radius-pill);
+  border-radius: 6px;
   padding: 8px 20px;
   font-family: var(--font-body);
   font-size: 13px;

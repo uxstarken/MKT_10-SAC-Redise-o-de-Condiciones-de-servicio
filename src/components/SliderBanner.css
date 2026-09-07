@@ -131,8 +131,9 @@
 }
 
 .slide.courier-slide .hero-banner-image {
-  object-position: right top;
-  transform: translateX(40px) translateY(-10px);
+  object-position: right center;
+  height: 100%; /* Sized to fit torso and box under arm without bottom cropping */
+  transform: translateX(40px) translateY(0); /* Removed vertical translation to avoid top cropping */
 }
 
 /* Flechas de navegación */
@@ -270,6 +271,10 @@
     right: 40px;
     width: 40%;
   }
+  .slide.courier-slide .hero-banner-image {
+    transform: translateX(20px) translateY(0);
+    height: 95%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -333,9 +338,13 @@
     display: block;
   }
 
+  .slide.courier-slide {
+    background-color: #029E47; /* Starken Green fallback background */
+  }
   .slide.courier-slide .hero-banner-image {
     transform: none;
     object-position: center;
+    object-fit: contain !important; /* Fully fits the image without edge cut-offs */
   }
 }
 

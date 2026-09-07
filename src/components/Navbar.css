@@ -21,6 +21,10 @@
   pointer-events: none;
 }
 
+.navbar-container.navbar-static {
+  position: absolute;
+}
+
 .navbar-container.mobile-menu-active {
   z-index: 1010;
 }
@@ -183,7 +187,7 @@
   background-color: var(--starken-green);
   color: #ffffff;
   padding: 10px 36px;
-  border-radius: var(--radius-pill);
+  border-radius: 6px;
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 14px;
@@ -366,7 +370,7 @@
   background-color: #029E47;
   color: #ffffff;
   padding: 14px;
-  border-radius: 8px;
+  border-radius: 50px;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 15px;

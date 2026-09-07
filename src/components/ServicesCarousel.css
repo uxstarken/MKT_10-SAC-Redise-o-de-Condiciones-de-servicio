@@ -216,7 +216,7 @@
   color: var(--starken-green);
   border: 2px solid var(--starken-green);
   padding: 12px 32px;
-  border-radius: var(--radius-pill);
+  border-radius: 6px;
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 14px;
@@ -257,6 +257,12 @@
   }
   .services-section {
     padding: 40px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn-secondary-services {
+    border-radius: var(--radius-pill) !important;
   }
 }
 

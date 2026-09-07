@@ -12,6 +12,7 @@ import SelectRole from './pages/SelectRole';
 import Marketplace from './pages/Marketplace';
 import Seguimiento from './pages/Seguimiento';
 import Servicios from './pages/Servicios';
+import Condiciones from './pages/Condiciones';
 import './index.css';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path="/marketplace" element={<Marketplace />} />
           <Route path="/seguimiento" element={<Seguimiento />} />
           <Route path="/servicios" element={<Servicios />} />
+          <Route path="/condiciones" element={<Condiciones />} />
         </Routes>
       </div>
     </BrowserRouter>

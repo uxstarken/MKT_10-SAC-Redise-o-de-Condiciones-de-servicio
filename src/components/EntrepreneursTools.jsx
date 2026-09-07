@@ -33,8 +33,13 @@ const EntrepreneursTools = () => {
       <div className={`ep-banners-row ${isVisible ? 'animate-zoom-in' : ''}`}>
         {/* Banner 1: Somos Partner */}
         <div className="ep-banner ep-banner-sp">
-          <div className="ep-banner-left-content">
-            <img src="/logo-sp.png" alt="Somos Partner" className="ep-logo" />
+          {/* First column: Logo */}
+          <div className="ep-banner-logo-col">
+            <img src="/logo-sp.png" alt="Somos Partner" className="ep-logo-large" />
+          </div>
+
+          {/* Second column: Text Content */}
+          <div className="ep-banner-text-col">
             <h3 className="ep-banner-title">
               Inscríbete y accede a<br />
               <strong><span>todos</span> nuestros <span>beneficios</span></strong>

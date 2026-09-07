@@ -21,7 +21,7 @@ const steps = [
     description: "Completa los datos, elige quien paga y ¡listo! Hazlo online o presencial. Si lo haces en línea, recibirás la etiqueta vía mail.",
     shortDescription: "Completa los datos en línea o presencial",
     btnText: "Crear envío",
-    link: "/emitir"
+    link: "#"
   },
   {
     id: 3,
