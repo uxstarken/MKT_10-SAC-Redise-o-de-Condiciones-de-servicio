@@ -13,7 +13,7 @@
   background: #0c8140 url('/banner-condiciones.png') no-repeat right center;
   background-size: auto 100%;
   color: var(--starken-white);
-  padding: 16px 24px;
+  padding: 22px 24px;
   overflow: hidden;
   text-align: center;
   box-sizing: border-box;
@@ -45,35 +45,42 @@
   line-height: 1.2;
   margin: 0;
   letter-spacing: 0.5px;
+  color: var(--starken-white);
 }
 
 /* Page Intro Section on Grey Background */
 .condiciones-page-intro {
-  text-align: center;
-  padding: 32px 0 24px 0;
+  text-align: left;
+  padding: 30px 0 20px 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 16px;
-  max-width: 800px;
-  margin: 0 auto;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  margin: 0 0 20px 0;
 }
 
 .condiciones-intro-subtitle {
   font-size: 16px;
-  line-height: 1.6;
-  color: var(--starken-text-muted);
+  line-height: 1.5;
+  color: #505050;
   margin: 0;
   font-weight: 500;
+  text-align: left;
+  flex: 1;
 }
 
 .condiciones-intro-meta {
-  font-size: 12px;
-  color: var(--starken-text-muted);
-  font-weight: 600;
-  background-color: var(--starken-border);
-  padding: 4px 10px;
-  border-radius: 4px;
+  font-size: 14px;
+  color: var(--starken-green-dark);
+  font-weight: 700;
+  background-color: var(--starken-green-light);
+  border: 1px solid rgba(0, 157, 78, 0.2);
+  padding: 6px 14px;
+  border-radius: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 /* Tabs Navigation */
@@ -112,7 +119,7 @@
 .tab-nav-btn:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
-  border-color: rgba(255, 132, 0, 0.4);
+  border-color: rgba(249, 115, 22, 0.4);
 }
 
 .tab-nav-btn.active {
@@ -153,12 +160,12 @@
   font-family: var(--font-title);
   font-size: 16px;
   font-weight: 700;
-  color: var(--starken-text-dark);
+  color: #303030;
 }
 
 .tab-desc {
-  font-size: 12px;
-  color: var(--starken-text-muted);
+  font-size: 14px;
+  color: #505050;
   margin-top: 2px;
 }
 
@@ -193,7 +200,7 @@
 .sidebar-title {
   font-family: var(--font-title);
   font-size: 18px;
-  color: var(--starken-text-dark);
+  color: #303030;
   margin-bottom: 12px;
 }
 
@@ -212,14 +219,14 @@
 
 .sidebar-search-container:focus-within {
   border-color: var(--starken-green);
-  box-shadow: 0 0 0 3px rgba(2, 158, 71, 0.1);
+  box-shadow: 0 0 0 3px rgba(0, 157, 78, 0.1);
   background-color: var(--starken-white);
 }
 
 .sidebar-search-container .search-icon {
   width: 16px;
   height: 16px;
-  color: var(--starken-text-muted);
+  color: #94A3B8;
   flex-shrink: 0;
   margin-right: 8px;
 }
@@ -227,17 +234,18 @@
 .sidebar-search-input {
   width: 100%;
   padding: 10px 0;
-  font-size: 13px;
+  font-size: 14px;
   background: transparent;
-  color: var(--starken-text-dark);
+  color: #303030;
   font-weight: 500;
   border: none;
   outline: none;
 }
 
 .sidebar-search-input::placeholder {
-  color: var(--starken-text-muted);
-  opacity: 0.8;
+  color: #94A3B8;
+  font-size: 14px;
+  opacity: 1;
 }
 
 .search-clear-btn {
@@ -276,15 +284,21 @@
   gap: 6px;
 }
 
+.sidebar-menu-item {
+  position: relative;
+  width: 100%;
+}
+
 .sidebar-menu button {
   background: none;
   border: none;
   width: 100%;
   padding: 8px 12px;
   border-radius: var(--radius-sm);
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--starken-text-muted);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: #505050;
   transition: all var(--transition-fast);
   cursor: pointer;
   display: flex;
@@ -299,10 +313,54 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: inherit;
 }
 
 .sidebar-menu button.no-match {
   opacity: 0.4;
+}
+
+/* Floating tooltip for horizontally truncated menu items */
+.sidebar-tooltip {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 8px;
+  background-color: #303030;
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  padding: 6px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+  pointer-events: none;
+  z-index: 100;
+  animation: sidebarTooltipFadeIn 0.15s ease-out forwards;
+}
+
+.sidebar-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 20px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #303030 transparent transparent transparent;
+}
+
+@keyframes sidebarTooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .sidebar-match-badge {
@@ -314,7 +372,7 @@
   border-radius: 10px;
   flex-shrink: 0;
   line-height: 1;
-  box-shadow: 0 1px 3px rgba(255, 132, 0, 0.3);
+  box-shadow: 0 1px 3px rgba(249, 115, 22, 0.3);
 }
 
 /* Legal text search result highlighting */
@@ -376,7 +434,7 @@ mark.search-highlight {
 
 .sidebar-promo {
   padding: 24px;
-  background-color: var(--starken-bg-light);
+  background-color: var(--starken-white);
   border: 1px solid var(--starken-border);
   border-left: 4px solid var(--starken-green);
   border-radius: var(--radius-card);
@@ -384,23 +442,26 @@ mark.search-highlight {
 }
 
 .sidebar-promo h4 {
-  font-size: 14px;
-  color: var(--starken-text-dark);
-  margin-bottom: 6px;
+  font-family: var(--font-title);
+  font-size: 16px;
+  color: #303030;
+  margin-bottom: 8px;
 }
 
 .sidebar-promo p {
-  font-size: 12px;
-  color: var(--starken-text-muted);
-  line-height: 1.4;
-  margin-bottom: 12px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #505050;
+  line-height: 1.5;
+  margin-bottom: 14px;
 }
 
 .sidebar-promo-btn {
   display: inline-block;
-  font-size: 11px;
+  font-family: var(--font-body);
+  font-size: 16px;
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: none;
   color: var(--starken-orange);
   text-decoration: none;
 }
@@ -427,14 +488,22 @@ mark.search-highlight {
 
 .section-intro h2 {
   font-family: var(--font-title);
-  font-size: 28px;
-  color: var(--starken-text-dark);
+  font-size: 24px;
+  color: #303030;
   margin-bottom: 12px;
+}
+
+.section-intro-tagline {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--starken-green);
+  margin-bottom: 12px;
+  letter-spacing: 0.2px;
 }
 
 .intro-text {
   font-size: 16px;
-  color: var(--starken-text-muted);
+  color: #505050;
   line-height: 1.6;
 }
 
@@ -451,16 +520,16 @@ mark.search-highlight {
 .legal-item h3 {
   font-family: var(--font-title);
   font-size: 20px;
-  color: var(--starken-text-dark);
+  color: #303030;
   margin-bottom: 12px;
   border-left: 4px solid var(--starken-green);
   padding-left: 12px;
 }
 
 .legal-item p {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
-  color: var(--starken-text-dark);
+  color: #505050;
   margin-bottom: 12px;
   text-align: justify;
 }
@@ -468,13 +537,14 @@ mark.search-highlight {
 .legal-item ul, .legal-item ol {
   margin-left: 20px;
   margin-bottom: 16px;
-  font-size: 14px;
-  color: var(--starken-text-dark);
+  font-size: 16px;
+  color: #505050;
 }
 
 .legal-item li {
   margin-bottom: 8px;
   line-height: 1.5;
+  color: #505050;
 }
 
 .ind-sub-item {
@@ -486,9 +556,17 @@ mark.search-highlight {
 }
 
 .ind-sub-item h5 {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
-  color: var(--starken-text-dark);
+  color: #303030;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.ind-sub-item p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #505050;
   margin-bottom: 8px;
 }
 
@@ -644,14 +722,14 @@ mark.search-highlight {
 
 .condiciones-downloads h3 {
   font-family: var(--font-title);
-  font-size: 20px;
-  color: var(--starken-text-dark);
+  font-size: 24px;
+  color: #303030;
   margin-bottom: 8px;
 }
 
 .condiciones-downloads p {
-  font-size: 14px;
-  color: var(--starken-text-muted);
+  font-size: 16px;
+  color: #505050;
   margin-bottom: 20px;
 }
 
@@ -665,17 +743,27 @@ mark.search-highlight {
   background-color: var(--starken-bg-light);
   border: 1px solid var(--starken-border);
   border-radius: var(--radius-sm);
-  padding: 16px;
+  padding: 18px;
   display: flex;
-  align-items: center;
-  gap: 12px;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 140px;
   transition: all var(--transition-fast);
 }
 
 .download-card:hover {
   background-color: var(--starken-white);
   box-shadow: var(--shadow-sm);
-  border-color: rgba(255, 132, 0, 0.2);
+  border-color: rgba(249, 115, 22, 0.3);
+  transform: translateY(-2px);
+}
+
+.download-card-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
 }
 
 .download-card-icon {
@@ -703,29 +791,37 @@ mark.search-highlight {
 }
 
 .download-card-info h5 {
-  font-size: 13px;
+  font-family: var(--font-title);
+  font-size: 14px;
   font-weight: 700;
-  color: var(--starken-text-dark);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  color: #303030;
+  line-height: 1.35;
+  margin-bottom: 4px;
+  white-space: normal;
 }
 
 .download-card-info span {
-  font-size: 11px;
-  color: var(--starken-text-muted);
+  font-size: 12px;
+  color: #505050;
+  font-weight: 500;
 }
 
 .download-action-btn {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--starken-orange);
   text-decoration: none;
   background-color: var(--starken-white);
-  padding: 6px 12px;
-  border-radius: 4px;
-  border: 1px solid var(--starken-border);
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid rgba(249, 115, 22, 0.3);
   transition: all var(--transition-fast);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .download-action-btn:hover {
@@ -782,6 +878,24 @@ mark.search-highlight {
 }
 
 @media (max-width: 768px) {
+  .condiciones-page-intro {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    padding: 16px 0 12px 0;
+  }
+
+  .condiciones-intro-subtitle {
+    text-align: center;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .condiciones-intro-meta {
+    margin: 0 auto;
+  }
+
   .condiciones-tabs-nav {
     grid-template-columns: 1fr;
     gap: 12px;
@@ -801,6 +915,22 @@ mark.search-highlight {
 
   .condiciones-text-content {
     padding: 24px 16px;
+  }
+
+  .legal-item p,
+  .legal-item ul,
+  .legal-item ol,
+  .legal-item li,
+  .ind-sub-item h5,
+  .ind-sub-item p,
+  .intro-text,
+  .condiciones-downloads p,
+  .condiciones-intro-subtitle {
+    font-size: 14px;
+  }
+
+  .condiciones-downloads h3 {
+    font-size: 20px;
   }
   
   .sidebar-menu {
