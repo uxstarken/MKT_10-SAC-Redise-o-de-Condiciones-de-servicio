@@ -480,6 +480,17 @@ mark.search-highlight {
   min-height: 500px;
 }
 
+.condiciones-text-content a:not(.download-action-btn) {
+  color: var(--starken-green);
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color var(--transition-fast);
+}
+
+.condiciones-text-content a:not(.download-action-btn):hover {
+  color: var(--starken-green-dark);
+}
+
 .section-intro {
   margin-bottom: 32px;
   border-bottom: 1px solid var(--starken-border);

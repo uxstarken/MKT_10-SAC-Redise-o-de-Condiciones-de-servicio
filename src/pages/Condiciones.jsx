@@ -530,7 +530,7 @@ const Condiciones = () => {
                       <div className="legal-item" id="gen-10">
                         <h3>X. Reclamos</h3>
                         <p>
-                          Todo reclamo originado con ocasión de la prestación del servicio convenido, deberá materializarse a través de nuestra página web <a href="https://www.starken.cl/form-reclamo" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--starken-orange)', fontWeight: '600' }}>www.starken.cl/form-reclamo</a> o formularios físicos disponibles en nuestras sucursales a lo largo del país. En cuanto a su tramitación, se observarán las normas y procedimientos señalados en nuestro Procedimiento de Reclamos.
+                          Todo reclamo originado con ocasión de la prestación del servicio convenido, deberá materializarse a través de nuestra página web <a href="https://www.starken.cl/form-reclamo" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--starken-green)', fontWeight: '600' }}>www.starken.cl/form-reclamo</a> o formularios físicos disponibles en nuestras sucursales a lo largo del país. En cuanto a su tramitación, se observarán las normas y procedimientos señalados en nuestro Procedimiento de Reclamos.
                         </p>
                       </div>
 
@@ -549,7 +549,7 @@ const Condiciones = () => {
                         <ul style={{ paddingLeft: '20px', marginBottom: '16px' }}>
                           <li style={{ marginBottom: '6px' }}><strong>i)</strong> Solicitar información acerca de los datos personales propios que se mantienen registrados.</li>
                           <li style={{ marginBottom: '6px' }}><strong>ii)</strong> Solicitar la eliminación o cancelación de los datos entregados cuando así lo desee y</li>
-                          <li style={{ marginBottom: '6px' }}><strong>iii)</strong> Oponerse a que sus datos personales sean utilizados para fines estadísticos. <a href="https://www.starken.cl/form-reclamo" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--starken-orange)', fontWeight: '600' }}>www.starken.cl/form-reclamo</a></li>
+                          <li style={{ marginBottom: '6px' }}><strong>iii)</strong> Oponerse a que sus datos personales sean utilizados para fines estadísticos. <a href="https://www.starken.cl/form-reclamo" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--starken-green)', fontWeight: '600' }}>www.starken.cl/form-reclamo</a></li>
                         </ul>
                       </div>
 
@@ -563,10 +563,10 @@ const Condiciones = () => {
                       <div className="legal-item" id="gen-14">
                         <h3>XIV. Vigencia</h3>
                         <p>
-                          Las presentes condiciones entrarán en vigencia a contar del 20 de junio de 2022. Se publicarán en <a href="https://www.starken.cl" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--starken-orange)', fontWeight: '600' }}>www.starken.cl</a> y se depositará copia física en cada una de las sucursales a lo largo del país. Respecto de los servicios contratados con anterioridad a la fecha de vigencia, se estará a lo dispuesto en la Versión Anterior.
+                          Las presentes condiciones entrarán en vigencia a contar del 20 de junio de 2022. Se publicarán en <a href="https://www.starken.cl" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--starken-green)', fontWeight: '600' }}>www.starken.cl</a> y se depositará copia física en cada una de las sucursales a lo largo del país. Respecto de los servicios contratados con anterioridad a la fecha de vigencia, se estará a lo dispuesto en la Versión Anterior.
                         </p>
                         <p>
-                          STARKEN podrá actualizar, modificar o eliminar el contenido de las presentes Condiciones en cualquier tiempo, total o parcialmente, y sin previo aviso, siempre respetando la normativa aplicable. Estas modificaciones y actualizaciones serán publicadas con a lo menos 10 días de anticipación a su entrada en vigencia en <a href="https://www.starken.cl" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--starken-orange)', fontWeight: '600' }}>www.starken.cl</a>.
+                          STARKEN podrá actualizar, modificar o eliminar el contenido de las presentes Condiciones en cualquier tiempo, total o parcialmente, y sin previo aviso, siempre respetando la normativa aplicable. Estas modificaciones y actualizaciones serán publicadas con a lo menos 10 días de anticipación a su entrada en vigencia en <a href="https://www.starken.cl" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--starken-green)', fontWeight: '600' }}>www.starken.cl</a>.
                         </p>
                       </div>
                     </div>
@@ -578,7 +578,7 @@ const Condiciones = () => {
                     <div className="section-intro">
                       <h2>Procedimientos de reclamos</h2>
                       <p className="intro-text">
-                        Todo reclamo originado con ocasión de la prestación del servicio convenido deberá materializarse a través de nuestra página <a href="https://www.starken.cl/form-reclamo" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--starken-orange)', fontWeight: '600' }}>www.starken.cl/form-reclamo</a> o formularios físicos en sucursales a lo largo del país. En cuanto a su tramitación, se observarán las normas y procedimientos siguientes:
+                        Todo reclamo originado con ocasión de la prestación del servicio convenido deberá materializarse a través de nuestra página <a href="https://www.starken.cl/form-reclamo" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--starken-green)', fontWeight: '600' }}>www.starken.cl/form-reclamo</a> o formularios físicos en sucursales a lo largo del país. En cuanto a su tramitación, se observarán las normas y procedimientos siguientes:
                       </p>
                     </div>
 
