@@ -928,6 +928,10 @@ mark.search-highlight {
     padding: 24px 16px;
   }
 
+  .legal-item h3 {
+    font-size: 18px;
+  }
+
   .legal-item p,
   .legal-item ul,
   .legal-item ol,
