@@ -259,7 +259,7 @@ const Condiciones = () => {
       <section className="condiciones-hero">
         <div className="condiciones-hero-overlay"></div>
         <div className="condiciones-hero-container">
-          <h1 className="condiciones-hero-title">Condiciones Generales de Servicios</h1>
+          <h1 className="condiciones-hero-title">Condiciones generales de servicios</h1>
         </div>
       </section>
 
